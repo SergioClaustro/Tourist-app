@@ -62,6 +62,6 @@ app.post("/places/delete/:id", async (req, res) => {
 });
 
 // Iniciar servidor
-app.listen(PORT, "192.168.100.56", () => {
+app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
