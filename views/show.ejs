@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= place.name %></title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <h1><%= place.name %></h1>
+  <p><strong>Ubicación:</strong> <%= place.location %></p>
+  <p><%= place.description %></p>
+
+  <% if (place.media_url) { %>
+    <div class="media">
+      <% if (place.media_url.includes("youtube.com") || place.media_url.includes("youtu.be")) { %>
+        <iframe width="560" height="315" src="<%= place.media_url.replace("watch?v=", "embed/") %>" frameborder="0" allowfullscreen></iframe>
+      <% } else { %>
+        <img src="<%= place.media_url %>" alt="Imagen del lugar" />
+      <% } %>
+    </div>
+  <% } %>
+
+  <% if (place.map_embed) { %>
+    <div class="map">
+      <iframe src="<%= place.map_embed %>" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  <% } %>
+
+  <a href="/places/edit/<%= place.id %>">Editar</a>
+  <form action="/places/delete/<%= place.id %>" method="POST" style="display: inline;">
+    <button type="submit">Eliminar</button>
+  </form>
+  <a href="/places">Volver</a>
+</body>
+</html>

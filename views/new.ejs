@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nuevo lugar</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Agregar nuevo lugar</h1>
+    <form action="/places" method="POST">
+      <input type="text" name="name" placeholder="Nombre" required /><br />
+      <input type="text" name="location" placeholder="Ubicación" /><br />
+      <textarea name="description" placeholder="Descripción" required></textarea
+      ><br />
+      <input
+        type="text"
+        name="media_url"
+        placeholder="URL de imagen o video"
+      /><br />
+      <input
+        type="text"
+        name="map_embed"
+        placeholder="Embed de Google Maps (iframe src)"
+      /><br />
+      <button type="submit">Guardar</button>
+    </form>
+    <a href="/places">Volver</a>
+  </body>
+</html>

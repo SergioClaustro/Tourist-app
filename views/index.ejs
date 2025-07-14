@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lugares Turísticos</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lugares Turísticos</h1>
+      <a class="btn" href="/places/new">Agregar nuevo lugar</a>
+    </header>
+
+    <% if (places.length === 0) { %>
+    <p>No hay lugares agregados aún.</p>
+    <% } else { %>
+    <div class="grid">
+      <% places.forEach(p => { %>
+      <div class="card">
+        <h2><%= p.name %></h2>
+        <p><strong>Ubicación:</strong> <%= p.location %></p>
+        <a href="/places/<%= p.id %>">Ver más</a>
+      </div>
+      <% }) %>
+    </div>
+    <% } %>
+  </body>
+</html>

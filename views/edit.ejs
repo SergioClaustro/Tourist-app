@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Editar lugar</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <h1>Editar <%= place.name %></h1>
+    <form action="/places/edit/<%= place.id %>" method="POST">
+      <input type="text" name="name" value="<%= place.name %>" required /><br />
+      <input type="text" name="location" value="<%= place.location %>" /><br />
+      <textarea name="description" required><%= place.description %></textarea
+      ><br />
+      <input
+        type="text"
+        name="media_url"
+        value="<%= place.media_url %>"
+      /><br />
+      <input
+        type="text"
+        name="map_embed"
+        value="<%= place.map_embed %>"
+      /><br />
+      <button type="submit">Actualizar</button>
+    </form>
+    <a href="/places">Volver</a>
+  </body>
+</html>
